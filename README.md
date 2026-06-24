@@ -114,3 +114,7 @@ The engine is disabled in the test environment, so the suite runs with no networ
 ## A note on paper trading
 
 Kestrel trades with virtual money only. It never places a real order and never connects to a brokerage or exchange account. It is a learning project for exploring trading strategies, market data, and Elixir's concurrency model. None of it is financial advice.
+
+## License
+
+Released under the MIT License. See [LICENSE](LICENSE) for the full text.
