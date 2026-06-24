@@ -17,7 +17,7 @@ defmodule KestrelWeb.Router do
   scope "/", KestrelWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", DashboardLive, :index
   end
 
   # Other scopes may use custom stacks.
