@@ -1,5 +1,8 @@
 import Config
 
+# Don't poll live markets or run the trader during tests.
+config :kestrel, :start_engine, false
+
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :kestrel, KestrelWeb.Endpoint,

@@ -10,6 +10,19 @@ import Config
 config :kestrel,
   generators: [timestamp_type: :utc_datetime]
 
+# Kestrel paper-trading engine. All virtual money, no real orders. Every
+# market here runs every strategy from Kestrel.Strategies as its own process.
+config :kestrel, :start_engine, true
+
+config :kestrel, Kestrel.Engine,
+  products: ["BTC-USD", "ETH-USD", "SOL-USD"],
+  poll_ms: 10_000,
+  start_cash: 20.0,
+  fee_rate: 0.006
+
+# Where bot state is persisted (DETS file), so it survives restarts.
+config :kestrel, Kestrel.Store, path: "priv/kestrel_store.dets"
+
 # Configures the endpoint
 config :kestrel, KestrelWeb.Endpoint,
   url: [host: "localhost"],
